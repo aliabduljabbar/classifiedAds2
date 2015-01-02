@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/WEB-INF/web.xml</file>
+            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/header.jsp</file>
+            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/src/java/classifiedAds/controller/PostAdServlet.java</file>
+            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/editAd.jsp</file>
+            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/style.css</file>
+            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/src/java/classifiedAds/controller/EditAdServlet.java</file>
+            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/src/java/classifiedAds/service/AdBean.java</file>
+            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/postAd.jsp</file>
+            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/browseAd.jsp</file>
+            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/src/java/classifiedAds/model/Ad.java</file>
+            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/index.jsp</file>
+            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/META-INF/context.xml</file>
+            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/src/java/classifiedAds/controller/DeleteAdServlet.java</file>
+        </group>
+    </open-files>
+</project-private>
