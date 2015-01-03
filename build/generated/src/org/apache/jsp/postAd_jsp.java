@@ -79,8 +79,36 @@ public final class postAd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                ");
       out.print(new Date());
       out.write("</br>  </br>\n");
+      out.write("            \n");
       out.write("                <a href=\"postAd.jsp\">Post a New Ad</a> &NegativeThickSpace; |\n");
       out.write("                <a href=\"browseAd.jsp\">Browse Ads</a>\n");
+      out.write("                \n");
+      out.write("                &nbsp; &nbsp; &nbsp; \n");
+      out.write("                ");
+ 
+
+                    String username = (String)session.getAttribute("username");
+                    if(username == null) {
+                
+      out.write("\n");
+      out.write("                \n");
+      out.write("                <a href=\"login.jsp\">Login</a>  &NegativeThickSpace; |\n");
+      out.write("                <a href=\"registration.jsp\" >Sign Up</a>\n");
+      out.write("                \n");
+      out.write("                ");
+
+                    } else {
+                
+      out.write("\n");
+      out.write("                <a href=\"account.jsp\" >");
+      out.print(username);
+      out.write("</a> &NegativeThickSpace; |\n");
+      out.write("                <a href=\"registration.jsp\" >Sign Up</a>\n");
+      out.write("                ");
+
+                    }
+                
+      out.write("\n");
       out.write("            </p>\n");
       out.write("        </div>\n");
       out.write("    </center>\n");
@@ -88,7 +116,7 @@ public final class postAd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("        <form method=\"post\" action=\"PostAdServlet\">\n");
       out.write("            <div id=\"mystyle\" class=\"myform\">\n");
-      out.write("                <form id=\"form\" name=\"form\" action=\"AddNewEmployee\" method=\"post\">\n");
+      out.write("<!--                <form id=\"form\" name=\"form\" action=\"AddNewEmployee\" method=\"post\">-->\n");
       out.write("                    <h1>Ad</h1>\n");
       out.write("                    <p>To Post new Ad enter following information</p>\n");
       out.write("                    <label>Ad ID<span class=\"small\">Enter Ad ID</span></label>\n");
@@ -108,7 +136,7 @@ public final class postAd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <input type=\"text\" name=\"cat_id\" id=\"cat_id\" />                            \n");
       out.write("                    <button type=\"submit\">Post This Ad</button>\n");
       out.write("                    <div class=\"spacer\"></div>\n");
-      out.write("                </form>\n");
+      out.write("                <!--</form>-->\n");
       out.write("            </div>\n");
       out.write("        </form>\n");
       out.write("    </body>\n");

@@ -5,8 +5,8 @@
  */
 package classifiedAds.controller;
 
-import classifiedAds.model.Ad;
-import classifiedAds.service.AdBean;
+import classifiedAds.model.User;
+import classifiedAds.service.UserBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Ali
  */
-public class DeleteAdServlet extends HttpServlet {
+public class RegServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,11 +32,16 @@ public class DeleteAdServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        int id = Integer.parseInt(request.getParameter("delId"));
-        AdBean adBean = new AdBean();
-        adBean.delete(id);
-        response.sendRedirect("browseAd.jsp");
+        User user = new User();
+        user.setId(Integer.parseInt(request.getParameter("id")));
+        user.setEmail(request.getParameter("email"));
+        user.setPassword(request.getParameter("password"));
+        user.setName(request.getParameter("name"));
+        user.setPhone(request.getParameter("phone"));
         
+        UserBean userBean = new UserBean();
+        userBean.registerUser(user);
+        response.sendRedirect("login.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

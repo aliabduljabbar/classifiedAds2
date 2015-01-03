@@ -5,20 +5,20 @@
  */
 package classifiedAds.controller;
 
-import classifiedAds.model.Ad;
-import classifiedAds.service.AdBean;
+import classifiedAds.model.User;
+import classifiedAds.service.UserBean;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
+import javax.servlet.RequestDispatcher;
 /**
  *
  * @author Ali
  */
-public class DeleteAdServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,11 +31,30 @@ public class DeleteAdServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        User user = new User();
+        user.setEmail(request.getParameter("email"));
+        user.setPassword(request.getParameter("password"));
         
-        int id = Integer.parseInt(request.getParameter("delId"));
-        AdBean adBean = new AdBean();
-        adBean.delete(id);
-        response.sendRedirect("browseAd.jsp");
+        
+        UserBean loginBean = new UserBean();
+        user.setId(loginBean.verify(user));
+        if( user.getId() != -1) {
+            user = loginBean.getUser(user.getId());
+            request.getSession().setAttribute("user", user);
+            response.sendRedirect("browseAd.jsp");
+//            
+//            HttpSession session = request.getSession();
+//            session.setAttribute("userID", user.getId());
+//            session.setAttribute("username", user.getName());
+//            System.out.println("username "  + user.getName());
+//            //RequestDispatcher rd = request.getRequestDispatcher("")
+//            //user = loginBean.getUser(user.getId());
+//            request.setAttribute("username", user.getName());
+//            RequestDispatcher view =request.getRequestDispatcher("browseAd.jsp");
+//            view.forward(request, response);
+        } else {
+            response.sendRedirect("login.jsp");
+        }
         
     }
 

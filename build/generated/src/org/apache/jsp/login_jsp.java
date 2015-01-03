@@ -3,11 +3,9 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import classifiedAds.model.Ad;
-import classifiedAds.service.AdBean;
 import java.util.Date;
 
-public final class editAd_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -52,15 +50,12 @@ public final class editAd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <link href=\"style.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
-      out.write("        <title>Employee Update Page</title>\n");
+      out.write("        <title>Login</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        ");
@@ -83,62 +78,75 @@ public final class editAd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                ");
       out.print(new Date());
       out.write("</br>  </br>\n");
+      out.write("            \n");
       out.write("                <a href=\"postAd.jsp\">Post a New Ad</a> &NegativeThickSpace; |\n");
       out.write("                <a href=\"browseAd.jsp\">Browse Ads</a>\n");
+      out.write("                \n");
+      out.write("                &nbsp; &nbsp; &nbsp; \n");
+      out.write("                ");
+ 
+                    String username = request.getParameter("usrname");
+                    if(username == null) {
+                
+      out.write("\n");
+      out.write("                \n");
+      out.write("                <a href=\"login.jsp\">Login</a>  &NegativeThickSpace; |\n");
+      out.write("                <a href=\"registration.jsp\" >Sign Up</a>\n");
+      out.write("                \n");
+      out.write("                ");
+
+                    } else {
+                
+      out.write("\n");
+      out.write("                <a href=\"account.jsp\" >");
+      out.print(username);
+      out.write("</a> &NegativeThickSpace; |\n");
+      out.write("                <a href=\"registration.jsp\" >Sign Up</a>\n");
+      out.write("                ");
+
+                    }
+                
+      out.write("\n");
       out.write("            </p>\n");
       out.write("        </div>\n");
       out.write("    </center>\n");
       out.write("</body>\n");
       out.write("\n");
-      out.write("        ");
-
-            int id = Integer.parseInt(request.getParameter("id"));
-            AdBean eb = new AdBean();
-            Ad e = eb.getEmployee(id);
-        
+      out.write("        \n");
+      out.write("        <form method=\"post\" action=\"LoginServlet\">\n");
+      out.write("            <center>\n");
+      out.write("            <table border=\"1\" width=\"30%\" cellpadding=\"3\">\n");
+      out.write("                <thead>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <th colspan=\"2\">Login Here</th>\n");
+      out.write("                    </tr>\n");
+      out.write("                </thead>\n");
+      out.write("                <tbody>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td>Email</td>\n");
+      out.write("                        <td><input type=\"text\" name=\"email\" id=\"email\" value=\"\" /></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td>Password</td>\n");
+      out.write("                        <td><input type=\"password\" name=\"password\" id=\"password\" value=\"\" /></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><input type=\"submit\" value=\"Login\" /></td>\n");
+      out.write("                        <td><input type=\"reset\" value=\"Reset\" /></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td colspan=\"2\">Yet Not Registered!! <a href=\"reg.jsp\">Register Here</a></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                </tbody>\n");
+      out.write("            </table>\n");
+      out.write("            </center>\n");
       out.write("\n");
-      out.write("        <div id=\"mystyle\" class=\"myform\">\n");
-      out.write("            <form id=\"form\" name=\"form\" action=\"EditAdServlet\" method=\"post\">\n");
-      out.write("                <h1>Update Ad ID:");
-      out.print(e.getId());
-      out.write("</h1>\n");
-      out.write("                <p>Modify the following information to update Ad ID:");
-      out.print(e.getId());
-      out.write("</p>\n");
-      out.write("                <label><input type=\"hidden\" name=\"id\" id=\"id\" value=\"");
-      out.print(e.getId());
-      out.write("\"/><span class=\"small\"></span></label>                    \n");
-      out.write("                \n");
-      out.write("                <label>Title<span class=\"small\">Enter title</span></label>\n");
-      out.write("                    <input type=\"text\" name=\"title\" id=\"title\" value=\"");
-      out.print(e.getTitle());
-      out.write("\"/>\n");
-      out.write("                    <label>User_ID<span class=\"small\">Enter user_id</span></label>\n");
-      out.write("                    <input type=\"text\" name=\"user_id\" id=\"user_id\"  value=\"");
-      out.print(e.getUser_id());
-      out.write("\"/>\n");
-      out.write("                    <label>Description<span class=\"small\">Enter Description</span></label>\n");
-      out.write("                    <input type=\"text\" name=\"description\" id=\"description\"  value=\"");
-      out.print(e.getDescription());
-      out.write("\"/>\n");
-      out.write("                    <label>Price<span class=\"small\">Enter Price</span></label>\n");
-      out.write("                    <input type=\"text\" name=\"price\" id=\"price\"  value=\"");
-      out.print(e.getPrice());
-      out.write("\"/>\n");
-      out.write("                    <label>Activeness<span class=\"small\">Enter 1 if it'll be Active</span></label>\n");
-      out.write("                    <input type=\"text\" name=\"active\" id=\"active\"  value=\"");
-      out.print(e.getActive());
-      out.write("\"/>                            \n");
-      out.write("                    <label>cat_id<span class=\"small\">Enter Category_ID</span></label>\n");
-      out.write("                    <input type=\"text\" name=\"cat_id\" id=\"cat_id\"  value=\"");
-      out.print(e.getCat_id());
-      out.write("\"/> \n");
-      out.write("                <button type=\"submit\">Update Ad</button>\n");
-      out.write("                <div class=\"spacer\"></div>\n");
-      out.write("            </form>\n");
-      out.write("        </div>   \n");
+      out.write("        </form> \n");
+      out.write("    </form> \n");
+      out.write("        \n");
+      out.write("        \n");
       out.write("    </body>\n");
-      out.write("</html>");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

@@ -3,19 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/WEB-INF/web.xml</file>
-            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/header.jsp</file>
-            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/src/java/classifiedAds/controller/PostAdServlet.java</file>
-            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/editAd.jsp</file>
-            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/style.css</file>
-            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/src/java/classifiedAds/controller/EditAdServlet.java</file>
-            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/src/java/classifiedAds/service/AdBean.java</file>
-            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/postAd.jsp</file>
-            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/browseAd.jsp</file>
-            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/src/java/classifiedAds/model/Ad.java</file>
-            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/index.jsp</file>
-            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/web/META-INF/context.xml</file>
-            <file>file:/Users/Ali/NetBeansProjects/classifiedAds/src/java/classifiedAds/controller/DeleteAdServlet.java</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/web/editAd.jsp</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/web/WEB-INF/web.xml</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/web/registration.jsp</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/web/index.jsp</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/web/header.jsp</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/src/java/classifiedAds/service/UserBean.java</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/src/java/classifiedAds/controller/DeleteAdServlet.java</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/web/login.jsp</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/src/java/classifiedAds/controller/PostAdServlet.java</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/web/browseAd.jsp</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/nbproject/build-impl.xml</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/src/java/classifiedAds/service/AdBean.java</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/src/java/classifiedAds/model/User.java</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/src/java/classifiedAds/controller/EditAdServlet.java</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/src/java/classifiedAds/controller/RegServlet.java</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/src/java/classifiedAds/service/GetConnection.java</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/web/META-INF/context.xml</file>
+            <file>file:/Users/Ali/Gits/classifiedAds2/src/java/classifiedAds/controller/LoginServlet.java</file>
         </group>
     </open-files>
 </project-private>

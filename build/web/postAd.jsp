@@ -17,7 +17,7 @@
         <%@include file="header.jsp"%>
         <form method="post" action="PostAdServlet">
             <div id="mystyle" class="myform">
-                <form id="form" name="form" action="AddNewEmployee" method="post">
+<!--                <form id="form" name="form" action="AddNewEmployee" method="post">-->
                     <h1>Ad</h1>
                     <p>To Post new Ad enter following information</p>
                     <label>Ad ID<span class="small">Enter Ad ID</span></label>
@@ -37,7 +37,7 @@
                     <input type="text" name="cat_id" id="cat_id" />                            
                     <button type="submit">Post This Ad</button>
                     <div class="spacer"></div>
-                </form>
+                <!--</form>-->
             </div>
         </form>
     </body>

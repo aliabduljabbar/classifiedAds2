@@ -30,12 +30,10 @@ public class AdBean {
     
     
     public void addNew(Ad ad) {
-        Connection con = null;
-        PreparedStatement pstmt = null;
-        try {
-            Class.forName(JDBC_DRIVER);
-            con = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
-            pstmt = con.prepareStatement("INSERT INTO `ad` (`id`, `title`, `user_id`, `description`, `price`, `loc_id`, `active`, `cat_id`)\n" +
+        
+        
+        try (Connection con = GetConnection.connection()) {
+            PreparedStatement pstmt = con.prepareStatement("INSERT INTO `ad` (`id`, `title`, `user_id`, `description`, `price`, `loc_id`, `active`, `cat_id`)\n" +
             "VALUES (?, ?, ?, ?, ?, ?, ?, ?);");
             
             pstmt.setInt(1, ad.getId());
@@ -47,26 +45,15 @@ public class AdBean {
             pstmt.setInt(7, ad.getActive());
             pstmt.setInt(8, ad.getCat_id());
             pstmt.execute();
-        } catch (SQLException | ClassNotFoundException ex) {
- 
-        } finally {
-            try {
-                if (pstmt != null) {
-                    pstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(AdBean.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AdBean.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
     public void delete(int id) {
         
-            Ad ad = new Ad();
-            ad = this.getAd(id);
+            
+            Ad ad = this.getAd(id);
             ad.setActive(0);
             this.update(ad);
             //stmt.execute("DELETE FROM ad WHERE id=" + String.valueOf(id));

@@ -4,6 +4,7 @@
     Author     : Ali
 --%>
 
+<%@page import="classifiedAds.model.User"%>
 <%@page import="classifiedAds.service.AdBean"%>
 <%@page import="classifiedAds.model.Ad"%>
 <%@page import="java.util.List"%>
@@ -16,7 +17,13 @@
         <title>Browse Ads</title>
     </head>
     <body>
+    
         <%@include file="header.jsp"%>
+    <center>
+        <% User user = (User) session.getAttribute("user");
+        if (user != null) { %>
+            Welcome <% user.getName(); } %>
+    </center>
         <div>
             <table>
                 <thead>
@@ -54,14 +61,16 @@
                                 </form>
                             </div>
                         </td>
+                        
                         <td style="border: none;">
                             <div>
                                 <form method="post" action="DeleteAdServlet">
-                                    <input type="hidden" id="id" name="id" value="<%=String.valueOf(e.getId())%>"/> 
+                                    <input type="hidden" id="delId" name="delId" value="<%=String.valueOf(e.getId())%>"/> 
                                     <input type="submit" value="Delete"/> 
                                 </form>
                             </div>
                         </td>
+                        
                     </tr>
                     <%
                         }

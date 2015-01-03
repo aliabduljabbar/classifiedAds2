@@ -1,28 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    <servlet>
-        <servlet-name>PostAdServlet</servlet-name>
-        <servlet-class>classifiedAds.controller.PostAdServlet</servlet-class>
-    </servlet>
+    
     <servlet>
         <servlet-name>EditAdServlet</servlet-name>
         <servlet-class>classifiedAds.controller.EditAdServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>BrowseAdServlet</servlet-name>
+        <servlet-name>DeleteAdServlet</servlet-name>
         <servlet-class>classifiedAds.controller.DeleteAdServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>classifiedAds.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>PostAdServlet</servlet-name>
-        <url-pattern>/PostAdServlet</url-pattern>
-    </servlet-mapping>
+        <servlet-class>classifiedAds.controller.PostAdServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>regServlet</servlet-name>
+        <servlet-class>classifiedAds.controller.RegServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>EditAdServlet</servlet-name>
         <url-pattern>/EditAdServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>BrowseAdServlet</servlet-name>
-        <url-pattern>/BrowseAdServlet</url-pattern>
+        <servlet-name>DeleteAdServlet</servlet-name>
+        <url-pattern>/DeleteAdServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PostAdServlet</servlet-name>
+        <url-pattern>/PostAdServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>regServlet</servlet-name>
+        <url-pattern>/RegServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

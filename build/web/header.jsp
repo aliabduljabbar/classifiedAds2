@@ -19,8 +19,28 @@
             <p>
                 <b>testing of ad, edit and delete functionality of ads</b><br/>
                 <%=new Date()%></br>  </br>
+            
                 <a href="postAd.jsp">Post a New Ad</a> &NegativeThickSpace; |
                 <a href="browseAd.jsp">Browse Ads</a>
+                
+                &nbsp; &nbsp; &nbsp; 
+                <% 
+
+                    String username = (String)session.getAttribute("username");
+                    if(username == null) {
+                %>
+                
+                <a href="login.jsp">Login</a>  &NegativeThickSpace; |
+                <a href="registration.jsp" >Sign Up</a>
+                
+                <%
+                    } else {
+                %>
+                <a href="account.jsp" ><%=username%></a> &NegativeThickSpace; |
+                <a href="registration.jsp" >Sign Up</a>
+                <%
+                    }
+                %>
             </p>
         </div>
     </center>

@@ -108,11 +108,9 @@ public final class browseAd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    ");
 
                         AdBean eb = new AdBean();
-                        List<Ad> list = eb.getEmployees();
+                        List<Ad> list = eb.getAds();
                         
-                        System.out.println("its about toprint ****");
                         for (Ad e : list) {
-                            System.out.print(e.getTitle() + "\n");
                     
       out.write("\n");
       out.write(" \n");
@@ -148,6 +146,18 @@ public final class browseAd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                </form>\n");
       out.write("                            </div>\n");
       out.write("                        </td>\n");
+      out.write("                        \n");
+      out.write("                        <td style=\"border: none;\">\n");
+      out.write("                            <div>\n");
+      out.write("                                <form method=\"post\" action=\"DeleteAdServlet\">\n");
+      out.write("                                    <input type=\"hidden\" id=\"delId\" name=\"delId\" value=\"");
+      out.print(String.valueOf(e.getId()));
+      out.write("\"/> \n");
+      out.write("                                    <input type=\"submit\" value=\"Delete\"/> \n");
+      out.write("                                </form>\n");
+      out.write("                            </div>\n");
+      out.write("                        </td>\n");
+      out.write("                        \n");
       out.write("                    </tr>\n");
       out.write("                    ");
 
